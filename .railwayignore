@@ -1,0 +1,13 @@
+venv/
+__pycache__/
+*.pyc
+.env
+.git/
+.vscode/
+logs/
+data/
+*.db
+tests/
+test_db.py
+README.md
+.env.example

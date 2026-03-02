@@ -21,8 +21,8 @@ COPY . .
 # Create data directory
 RUN mkdir -p /app/data
 
-# Expose port
-EXPOSE 8000
+# Expose port (Railway assigns PORT dynamically)
+EXPOSE ${PORT:-8000}
 
-# Run the application
-CMD ["uvicorn", "src.api.main:app", "--host", "0.0.0.0", "--port", "8000"]
+# Run the application (use shell form so $PORT gets expanded)
+CMD uvicorn src.api.main:app --host 0.0.0.0 --port ${PORT:-8000}
